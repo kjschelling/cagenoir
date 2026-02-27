@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cage Noir | Portfolio</title>
+  <meta name="description" content="Cage Noir — Portfolio. Editorial, beauty, fashion model based in Los Angeles." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/styles.css" />
+
+  <style>
+    .modal-overlay{
+      position:fixed; inset:0;
+      display:none;
+      align-items:center; justify-content:center;
+      padding:24px;
+      background:rgba(0,0,0,.75);
+      z-index:9999;
+    }
+    .modal-overlay.is-open{ display:flex; }
+
+    .modal-content{
+      position:relative;
+      max-width:min(1100px, 96vw);
+      max-height:88vh;
+      width:100%;
+      display:grid;
+      place-items:center;
+    }
+
+    .modal-img{
+      max-width:100%;
+      max-height:88vh;
+      width:auto; height:auto;
+      border-radius:12px;
+      box-shadow:0 16px 60px rgba(0,0,0,.45);
+      background:#111;
+    }
+
+    .modal-close{
+      position:absolute;
+      top:-12px; right:-12px;
+      width:44px; height:44px;
+      border:none;
+      border-radius:999px;
+      cursor:pointer;
+      background:rgba(255,255,255,.9);
+      color:#111;
+      font-size:22px;
+      line-height:1;
+      display:grid;
+      place-items:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+    }
+
+    .modal-nav{
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      width:48px; height:48px;
+      border:none;
+      border-radius:999px;
+      cursor:pointer;
+      background:rgba(255,255,255,.9);
+      color:#111;
+      font-size:26px;
+      line-height:1;
+      display:grid;
+      place-items:center;
+      box-shadow:0 10px 30px rgba(0,0,0,.25);
+      user-select:none;
+    }
+    .modal-prev{ left:-12px; }
+    .modal-next{ right:-12px; }
+
+    /* Optional: show nav buttons inside small screens without overflowing */
+    @media (max-width: 640px){
+      .modal-prev{ left:8px; }
+      .modal-next{ right:8px; }
+      .modal-close{ top:8px; right:8px; }
+    }
+
+    .tile-img{ cursor: zoom-in; }
+  </style>
+</head>
+<body>
+
+  <header class="nav">
+    <a class="logo" href="index.html">CAGE NOIR</a>
+    <nav class="nav-links">
+      <a class="active" href="portfolio.html">Portfolio</a>
+      <a href="about.html">Profile</a>
+      <a href="contact.html">Booking</a>
+      <a class="external" href="https://thecagebazaar.com" target="_blank" rel="noreferrer">The Cage Bazaar</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <section class="section">
+      <h1 class="page-title">Portfolio</h1>
+      <p class="muted center max">
+        Editorial luxury presence. Beauty, fashion, swim, and commercial available.
+      </p>
+
+      <div class="grid space-top">
+        <img class="tile-img" src="assets/img/portfolio/edsger-clean1.jpg" alt="Cage Noir Portfolio image 1">
+        <img class="tile-img" src="assets/img/portfolio/stanD-clean-beauty.jpg" alt="Cage Noir Portfolio image 2">
+        <img class="tile-img" src="assets/img/portfolio/stanD-closeup.jpg" alt="Cage Noir Portfolio image 3">
+        <img class="tile-img" src="assets/img/portfolio/stanD-red-rose.JPG" alt="Cage Noir Portfolio image 4">
+        <img class="tile-img" src="assets/img/portfolio/fitz-blazer.jpg" alt="Cage Noir Portfolio image 5">
+        <img class="tile-img" src="assets/img/portfolio/fitz-white-collar.jpg" alt="Cage Noir Portfolio image 6">
+        <img class="tile-img" src="assets/img/portfolio/fitz-box-legs.jpg" alt="Cage Noir Portfolio image 7">
+        <img class="tile-img" src="assets/img/portfolio/fitz-vest.jpg" alt="Cage Noir Portfolio image 8">
+        <img class="tile-img" src="assets/img/portfolio/stanD-silver.jpg" alt="Cage Noir Portfolio image 9">
+        <img class="tile-img" src="assets/img/portfolio/stanD-rock-swim.jpg" alt="Cage Noir Portfolio image 10">
+        <img class="tile-img" src="assets/img/portfolio/ianT-dark-beauty.jpg" alt="Cage Noir Portfolio image 11">
+        <img class="tile-img" src="assets/img/portfolio/freeman-closeup.jpg" alt="Cage Noir Portfolio image 12">
+      </div>
+
+      <h2 class="muted center space-top">Editorial Features</h2>
+
+      <div class="grid space-top">
+        <img class="tile-img" src="assets/img/editorial/editorial-img-4.jpeg" alt="Cage Noir Editorial image 1">
+        <img class="tile-img" src="assets/img/editorial/editorial-img-2.jpg" alt="Cage Noir Editorial image 2">
+        <img class="tile-img" src="assets/img/editorial/editorial-img-3.png" alt="Cage Noir Editorial image 3">
+        <img class="tile-img" src="assets/img/editorial/editorial-img-1.jpg" alt="Cage Noir Editorial image 4">
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© 2026 Cage Noir</div>
+    <div class="footer-links">
+      <a href="contact.html">Booking</a>
+      <a href="https://thecagebazaar.com" target="_blank" rel="noreferrer">The Cage Bazaar</a>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="imgModal" aria-hidden="true" role="dialog" aria-label="Image preview">
+    <div class="modal-content" role="document">
+      <button class="modal-close" type="button" id="modalClose" aria-label="Close image preview">×</button>
+      <button class="modal-nav modal-prev" type="button" id="modalPrev" aria-label="Previous image">‹</button>
+      <button class="modal-nav modal-next" type="button" id="modalNext" aria-label="Next image">›</button>
+      <img class="modal-img" id="modalImg" alt="">
+    </div>
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
