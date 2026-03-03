@@ -64,6 +64,15 @@ main{padding-top:74px;}
   position:relative;
   text-align:center;
 }
+
+@media (max-width: 768px) {
+  .hero {
+    height: 70vh;
+    background-image: url('/assets/img/portfolio/ianT-dark-beauty.jpg');
+    background-position: center top;
+  }
+}
+
 .hero-overlay{
   position:absolute;inset:0;
   background:linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(11,10,10,1));
