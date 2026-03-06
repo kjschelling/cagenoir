@@ -13,6 +13,7 @@
 
 body{
   font-family:'Inter', sans-serif;
+  font-size: large;
   color:var(--text);
   background:
     radial-gradient(1200px 700px at 20% 0%, rgba(88,40,44,0.28), transparent 55%),
@@ -301,4 +302,51 @@ main{padding-top:74px;}
   height:2px;
   background:var(--dusty);
   margin-top:18px;
+}
+
+/* Comp Card Section */
+.comp-card-section{
+  background:linear-gradient(180deg, rgba(88,40,44,0.38), rgba(11,10,10,1));
+}
+
+.comp-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.comp-card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.comp-card-item img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transition: 0.35s ease;
+  filter: saturate(0.98) contrast(1.03);
+}
+
+.comp-card-item img:hover {
+  transform: translateY(-3px);
+  border-color: rgba(182,122,134,0.75);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+}
+
+.comp-card-item .btn {
+  margin-top: 8px;
+}
+
+@media (max-width: 640px) {
+  .comp-card-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
 }
