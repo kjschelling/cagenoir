@@ -135,3 +135,52 @@ document.addEventListener("DOMContentLoaded", () => {
   // Ensure DOM exists before grabbing elements
   document.addEventListener("DOMContentLoaded", initImageModal);
 })();
+
+// booking page
+
+document.addEventListener("DOMContentLoaded", function () {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightboxImage");
+  const lightboxClose = document.getElementById("lightboxClose");
+  const clickableImages = document.querySelectorAll(".digitals-grid img");
+
+  if (!lightbox || !lightboxImage || !lightboxClose || !clickableImages.length)
+    return;
+
+  function openLightbox(src, alt) {
+    lightboxImage.src = src;
+    lightboxImage.alt = alt || "";
+    lightbox.classList.add("open");
+    lightbox.setAttribute("aria-hidden", "false");
+    document.body.classList.add("lightbox-open");
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("open");
+    lightbox.setAttribute("aria-hidden", "true");
+    lightboxImage.src = "";
+    lightboxImage.alt = "";
+    document.body.classList.remove("lightbox-open");
+  }
+
+  clickableImages.forEach((img) => {
+    img.addEventListener("click", function () {
+      const fullSrc = img.getAttribute("data-full") || img.src;
+      openLightbox(fullSrc, img.alt);
+    });
+  });
+
+  lightboxClose.addEventListener("click", closeLightbox);
+
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) {
+      closeLightbox();
+    }
+  });
+
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && lightbox.classList.contains("open")) {
+      closeLightbox();
+    }
+  });
+});

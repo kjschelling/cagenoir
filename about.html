@@ -12,6 +12,13 @@
 
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
+
+<!-- Lightbox for Digitals -->
+<div class="lightbox" id="lightbox" aria-hidden="true">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+  <img class="lightbox-image" id="lightboxImage" src="" alt="" />
+</div>
+
 <body>
 
   <header class="nav">
@@ -24,6 +31,8 @@
     </nav>
   </header>
 
+  <!-- Profile Page -->
+
   <main class="page">
     <section class="section">
       <h1 class="page-title">Profile</h1>
@@ -34,9 +43,10 @@
       <p class="muted center max">
         Los Angeles–based model recognized for structured editorial presence,
         modern femininity, and clean luxury campaign aesthetics.
-        Founder of The Cage Bazaar.
+        Founder of <a href="thecagebazaar.com">The Cage Bazaar</a>.
       </p>
-
+<br>
+       <br>
       <div class="stats space-top">
         <div class="stat"><span>Height</span><strong>5'10"</strong></div>
         <div class="stat"><span>Bust</span><strong>33"</strong></div>
@@ -47,6 +57,58 @@
         <div class="stat"><span>Eyes</span><strong>Brown</strong></div>
         <div class="stat"><span>Location</span><strong>Los Angeles</strong></div>
       </div>
+
+      <!-- Add Digitals Here -->
+       <br>
+       <br>
+       <section class="digitals-section">
+  <div class="section-heading">
+    <p class="eyebrow">Current Digitals</p>
+    <h2>Polaroids</h2>
+  </div>
+
+ <div class="digitals-grid">
+    <figure class="digital-card headshot-card">
+      <img
+        src="assets/img/digitals/cagenoir-headshot.jpg"
+        alt="Cage Noir natural light headshot digital"
+        data-full="assets/img/digitals/cagenoir-headshot.jpg"
+      />
+      <figcaption>Headshot</figcaption>
+    </figure> 
+
+    <figure class="digital-card three-quarter-card">
+      <img
+        src="assets/img/digitals/cagenoir-3:4.jpg"
+        alt="Cage Noir three quarter digital"
+        data-full="assets/img/digitals/cagenoir-quarter.jpg"
+      />
+      <figcaption>3/4</figcaption>
+    </figure>
+
+    <figure class="digital-card tall full-body-card">
+      <img
+        src="assets/img/digitals/cagenoir-full.jpg"
+        alt="Cage Noir full body digital front view"
+        data-full="assets/img/digitals/cagenoir-full.jpg"
+      />
+      <figcaption>Full Body</figcaption>
+    </figure>
+
+    <figure class="digital-card tall full-body-card">
+      <img
+        src="assets/img/digitals/cagenoir-side.jpg"
+        alt="Cage Noir full body digital second look"
+        data-full="assets/img/digitals/cagenoir-side.jpg"
+      />
+      <figcaption>Side</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+
+      
 
       <div class="card space-top">
         <h2 class="card-title">Bookings</h2>
